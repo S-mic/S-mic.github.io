@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sasha Michell Dube</title>
+<meta name="description" content="I turn messy operational processes into workflows people can rely on. Workflow and operations systems builder, AI-first.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #fbfaf8; --surface: #ffffff; --text: #1c1b1f; --muted: #5f5d66;
+    --line: #e7e4ee; --accent: #5b3fd1; --accent-soft: #efebfd; --tag: #f3f1f7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #141318; --surface: #1d1b23; --text: #ecebf0; --muted: #a9a6b3;
+      --line: #2e2b37; --accent: #a996ff; --accent-soft: #2a2440; --tag: #26232e;
+    }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.6 Inter, system-ui, sans-serif; }
+  a { color: var(--accent); }
+  .wrap { max-width: 920px; margin: 0 auto; padding: 0 20px; }
+  header { padding: 72px 0 40px; }
+  .eyebrow { color: var(--accent); font-weight: 600; font-size: 14px; letter-spacing: .4px; }
+  h1 { font-size: clamp(32px, 6vw, 48px); line-height: 1.1; margin: 8px 0 16px; letter-spacing: -0.8px; }
+  .lead { font-size: 19px; color: var(--muted); max-width: 680px; margin: 0 0 24px; }
+  .links { display: flex; flex-wrap: wrap; gap: 10px; }
+  .btn { display: inline-block; padding: 9px 16px; border-radius: 8px; border: 1px solid var(--line); background: var(--surface); color: var(--text); text-decoration: none; font-weight: 500; font-size: 15px; }
+  .btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+  section { padding: 36px 0; border-top: 1px solid var(--line); }
+  h2 { font-size: 24px; margin: 0 0 6px; letter-spacing: -0.3px; }
+  .sub { color: var(--muted); margin: 0 0 24px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr)); gap: 16px; }
+  .card { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 22px; }
+  .card h3 { margin: 0 0 4px; font-size: 18px; }
+  .where { color: var(--muted); font-size: 14px; margin-bottom: 12px; }
+  .case { font-size: 15px; margin: 0; }
+  .case dt { color: var(--muted); font-weight: 600; font-size: 13px; text-transform: uppercase; letter-spacing: .4px; margin-top: 10px; }
+  .case dd { margin: 2px 0 0; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
+  .tag { background: var(--tag); color: var(--muted); font-size: 13px; padding: 3px 9px; border-radius: 99px; }
+  .shots { display: flex; gap: 10px; margin: 14px 0 4px; overflow-x: auto; }
+  .shots img { height: 220px; border-radius: 8px; border: 1px solid var(--line); }
+  .steps { counter-reset: s; list-style: none; padding: 0; margin: 0; }
+  .steps li { counter-increment: s; position: relative; padding: 0 0 14px 44px; }
+  .steps li::before { content: counter(s); position: absolute; left: 0; top: 0; width: 30px; height: 30px; border-radius: 50%; background: var(--accent-soft); color: var(--accent); font-weight: 700; display: grid; place-items: center; font-size: 14px; }
+  .note { background: var(--accent-soft); border-radius: 10px; padding: 14px 18px; font-size: 15px; }
+  footer { padding: 36px 0 60px; border-top: 1px solid var(--line); color: var(--muted); font-size: 15px; }
+  @media (max-width: 560px) { header { padding-top: 48px; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="eyebrow">Sasha Michell Dube · South Africa · Remote</div>
+  <h1>I turn messy processes into workflows people can rely on.</h1>
+  <p class="lead">Clear statuses, one owner for the next step, a person checking anything that can't be undone, and alerts that catch problems before a customer does. I build them with AI agents and check every result against the source.</p>
+  <div class="links">
+    <a class="btn primary" href="Sasha-Dube-CV.pdf">Download CV</a>
+    <a class="btn" href="mailto:sashamicheldube@gmail.com">Email me</a>
+    <a class="btn" href="https://linkedin.com/in/sasha-dube-dev">LinkedIn</a>
+    <a class="btn" href="https://github.com/S-mic">GitHub</a>
+  </div>
+</header>
+
+<section>
+  <h2>Selected work</h2>
+  <p class="sub">From two live products: <b>MyBusinessApp</b> (SaaS for South African small businesses, since Aug 2024) and <b>LOKi</b> (the operations platform for Light Fibre Infrastructure's fleet, HR and field teams, since Aug 2026). The code is private, so these are written case studies.</p>
+  <div class="grid">
+
+    <article class="card">
+      <h3>An approval queue for speeding warnings</h3>
+      <div class="where">LOKi · fleet &amp; HR</div>
+      <dl class="case">
+        <dt>Problem</dt><dd>Tracker data is noisy, and a wrong warning to a driver is an HR problem.</dd>
+        <dt>What I built</dt><dd>A review queue where every case carries its evidence: GPS track, posted limit, peak reading. A person confirms each message from a "waiting to be sent" list. Repeat cases escalate to HR. Unclear cases, such as on-ramps or a limit taken from Google Maps, are held for a person.</dd>
+        <dt>Judgement</dt><dd>After an HR and privacy review I turned trip recording off, added consent before any WhatsApp notice, and wrote down what was cut and why.</dd>
+      </dl>
+      <div class="tags"><span class="tag">Approval workflow</span><span class="tag">Exceptions</span><span class="tag">Privacy</span></div>
+    </article>
+
+    <article class="card">
+      <h3>Paper forms to field workflows</h3>
+      <div class="where">LOKi · operations</div>
+      <dl class="case">
+        <dt>Problem</dt><dd>QA sheets, snags, change requests, plant hire and incident reports lived on paper and in a paid forms tool.</dd>
+        <dt>Evidence</dt><dd>I measured the tool first: 9 of 132 records syncing, 0 site forms in use. That became the cancellation case, with exit criteria.</dd>
+        <dt>What changed</dt><dd>Web and mobile forms with sign-off steps. The field app runs in the browser, so iPhone users could start the same day.</dd>
+      </dl>
+      <div class="tags"><span class="tag">Discovery</span><span class="tag">Forms</span><span class="tag">Adoption</span></div>
+    </article>
+
+    <article class="card">
+      <h3>A WhatsApp loan-application flow nobody gets lost in</h3>
+      <div class="where">MyBusinessApp · lending client</div>
+      <dl class="case">
+        <dt>Built with</dt><dd>The product's no-code workflow builder, which client staff use too.</dd>
+        <dt>What I added</dt><dd>Answer validation that re-prompts, reuse of answers already given, automations that run when an application reaches a status, and a check that flags trigger keywords that would take over another workflow.</dd>
+        <dt>Nothing waits</dt><dd>A needs-reply queue, an hourly alert for customers still inside WhatsApp's 24-hour window, and approved templates for re-engaging once it closes.</dd>
+      </dl>
+      <div class="tags"><span class="tag">No-code builder</span><span class="tag">Automation</span><span class="tag">Handoffs</span></div>
+    </article>
+
+    <article class="card">
+      <h3>Daily checks for silent failures</h3>
+      <div class="where">MyBusinessApp · billing</div>
+      <dl class="case">
+        <dt>Problem</dt><dd>Some billing failures produce no error. Nobody notices until a customer does.</dd>
+        <dt>What I built</dt><dd>Checks in a daily alarm: payments left unallocated, usage on dead subscriptions, a broken gateway policy.</dd>
+        <dt>Result</dt><dd>Found AI usage that was tracked but never charged, and started billing it.</dd>
+      </dl>
+      <div class="tags"><span class="tag">Monitoring</span><span class="tag">SQL</span><span class="tag">Data checks</span></div>
+    </article>
+
+  </div>
+</section>
+
+<section>
+  <h2>A repeatable AI workflow</h2>
+  <p class="sub">AI agents run our software releases by following a written "skill": the steps, the checks, and the mistakes not to repeat.</p>
+  <ol class="steps">
+    <li><b>Delegate with context.</b> The agent gets the skill: what to build, where it goes, and what "done" means.</li>
+    <li><b>Don't trust the report.</b> One of my releases reported success but had published a three-day-old image under the new version. The label was right and the contents were wrong.</li>
+    <li><b>Check the content, not the label.</b> The skill now compares the new image with the previous one and searches it for a string only the new change contains. It also confirms the release reached the shared repository, not just my laptop.</li>
+    <li><b>Improve the method.</b> 20+ changes to the skill so far. One removed a double build and cut frontend releases from about 29 to about 15 minutes.</li>
+    <li><b>Hand it on.</b> Anyone on the team, person or agent, can run a release the same way, because the context lives in the skill instead of in my head.</li>
+  </ol>
+</section>
+
+<!-- AIRTABLE: uncomment once screenshots are in img/
+<section>
+  <h2>Content Approval Tracker (Airtable)</h2>
+  <p class="sub">A practice base for a social team making content for TV clients: one status, one next-action owner, review rounds logged, and exceptions (approved with no final file, legal sign-off missing, AI used where the client forbids it) routed to the account lead.</p>
+  <div class="shots">
+    <img src="img/airtable-pipeline.png" alt="Kanban of content items by status">
+    <img src="img/airtable-exceptions.png" alt="Exceptions view grouped by account lead">
+    <img src="img/airtable-review.png" alt="Review queue interface with Approve and Request changes buttons">
+  </div>
+</section>
+-->
+
+<section>
+  <h2>Side projects</h2>
+  <p class="sub">Built in my own time while studying.</p>
+  <div class="grid">
+    <article class="card">
+      <h3>Bookshelf</h3>
+      <div class="where">Python · Flet · capstone project</div>
+      <p>A reading tracker with library, details, form and stats views. Errors show on the field, it works with a JSON file or a live REST API, and it has tests.</p>
+      <div class="shots">
+        <img src="img/library.png" alt="Bookshelf library view">
+        <img src="img/form.png" alt="Bookshelf add book form">
+        <img src="img/stats.png" alt="Bookshelf reading stats">
+      </div>
+      <a href="https://github.com/S-mic/bookshelf-capstone">View the code</a>
+    </article>
+    <article class="card">
+      <h3>Ticket management app</h3>
+      <div class="where">React · Vue · Twig/PHP</div>
+      <p>The same ticket system built three times, in three frontend stacks, with login, a stats dashboard, full create/edit/delete, and form validation.</p>
+      <a href="https://github.com/S-mic/ticket-management-app">View the code</a>
+    </article>
+  </div>
+</section>
+
+<section>
+  <h2>How I work</h2>
+  <div class="note">
+    I map the process first: who's involved, what comes in, what goes out, the handoffs, the risks and the decisions. Then I build the lightest thing that fixes it and test the exceptions, not just the happy path. Rules handle what must happen every time, AI handles the fuzzy steps, and people make the judgement calls. I write it down so the next person, or the next agent, can run it without me.
+  </div>
+</section>
+
+<footer>
+  Sasha Michell Dube · <a href="mailto:sashamicheldube@gmail.com">sashamicheldube@gmail.com</a> · Training: FNB App Academy × University of Johannesburg (Python), SheCodes, WeCode
+</footer>
+
+</div>
+</body>
+</html>
