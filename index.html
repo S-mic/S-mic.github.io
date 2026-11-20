@@ -47,6 +47,9 @@
   .steps li { counter-increment: s; position: relative; padding: 0 0 14px 44px; }
   .steps li::before { content: counter(s); position: absolute; left: 0; top: 0; width: 30px; height: 30px; border-radius: 50%; background: var(--accent-soft); color: var(--accent); font-weight: 700; display: grid; place-items: center; font-size: 14px; }
   .note { background: var(--accent-soft); border-radius: 10px; padding: 14px 18px; font-size: 15px; }
+  figure.wide { margin: 18px 0 0; }
+  figure.wide img { width: 100%; border: 1px solid var(--line); border-radius: 10px; display: block; }
+  figcaption { color: var(--muted); font-size: 14px; margin-top: 6px; }
   footer { padding: 36px 0 60px; border-top: 1px solid var(--line); color: var(--muted); font-size: 15px; }
   @media (max-width: 560px) { header { padding-top: 48px; } }
 </style>
@@ -130,17 +133,30 @@
   </ol>
 </section>
 
-<!-- AIRTABLE: uncomment once screenshots are in img/
 <section>
   <h2>Content Approval Tracker (Airtable)</h2>
-  <p class="sub">A practice base for a social team making content for TV clients: one status, one next-action owner, review rounds logged, and exceptions (approved with no final file, legal sign-off missing, AI used where the client forbids it) routed to the account lead.</p>
-  <div class="shots">
-    <img src="img/airtable-pipeline.png" alt="Kanban of content items by status">
-    <img src="img/airtable-exceptions.png" alt="Exceptions view grouped by account lead">
-    <img src="img/airtable-review.png" alt="Review queue interface with Approve and Request changes buttons">
+  <p class="sub">A working base for a social team making content for TV clients. Built and tested in November 2026. <a href="Content-Approval-Tracker-Build-Log.pdf">Read the full build log (PDF)</a></p>
+  <div class="grid">
+    <article class="card">
+      <h3>What it does</h3>
+      <dl class="case">
+        <dt>Structure</dt><dd>Content items, people, campaigns and a log of every review decision, all linked.</dd>
+        <dt>Next step</dt><dd>Every item has one status, a plain-English next action and a named owner for it.</dd>
+        <dt>Exceptions</dt><dd>Flags approved-with-no-file, missing reviewer, overdue, 3+ review rounds, missing legal sign-off, and AI used where the client forbids it. Each one is emailed to the account lead.</dd>
+      </dl>
+    </article>
+    <article class="card">
+      <h3>How I used AI</h3>
+      <dl class="case">
+        <dt>Delegated</dt><dd>Claude helped me design it. Airtable's Omni built the links, formulas, views and automations from exact prompts.</dd>
+        <dt>Checked</dt><dd>Every result against sample rows whose answers I knew in advance, and every automation with a live test to my own inbox.</dd>
+        <dt>Caught</dt><dd>A formula that would have flagged every client, reported "done" by the AI. Plus two wrong email addresses and an automation left switched off.</dd>
+      </dl>
+    </article>
   </div>
+  <figure class="wide"><img src="img/airtable-pipeline.png" alt="Pipeline kanban of content items by status"><figcaption>Pipeline view: the whole team sees where every item is.</figcaption></figure>
+  <figure class="wide"><img src="img/airtable-exception-email.png" alt="Exception email sent to the account lead"><figcaption>Live test: an item approved with no final file emails the account lead the problem and the next action.</figcaption></figure>
 </section>
--->
 
 <section>
   <h2>Side projects</h2>
